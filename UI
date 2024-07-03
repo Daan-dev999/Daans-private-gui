@@ -1,9 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
@@ -11,29 +5,31 @@ local UICorner_2 = Instance.new("UICorner")
 local headlessnkorblox = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
 local TextButton_2 = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
-local ScrollingFrame = Instance.new("ScrollingFrame")
 local TextButton_3 = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
 local TextButton_4 = Instance.new("TextButton")
 local UICorner_6 = Instance.new("UICorner")
+local Player = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local UICorner_7 = Instance.new("UICorner")
+local TextBox_2 = Instance.new("TextBox")
+local UICorner_8 = Instance.new("UICorner")
 local Credsframe = Instance.new("Frame")
 local TextLabel_2 = Instance.new("TextLabel")
 
---Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Frame.Parent = ScreenGui
+Frame.Parent = game.StarterGui.ScreenGui
+Frame.Active = true
 Frame.BackgroundColor3 = Color3.fromRGB(0, 179, 255)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.307587147, 0, 0.22674419, 0)
 Frame.Size = UDim2.new(0, 473, 0, 352)
 Frame.Draggable = true
-Frame.Active = true
 
 UICorner.Parent = Frame
 
@@ -65,38 +61,16 @@ TextButton.Parent = headlessnkorblox
 TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.521739125, 0, 0.244047612, 0)
-TextButton.Size = UDim2.new(0, 143, 0, 50)
+TextButton.Position = UDim2.new(0.0111806607, 0, 0.244204745, 0)
+TextButton.Size = UDim2.new(0, 310, 0, 80)
 TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "Korblox(clientsided)"
+TextButton.Text = "Headless(clientsided)"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
-TextButton.MouseButton1Click:Connect(function(char)
-
-end)
 
 UICorner_3.Parent = TextButton
-
-TextButton_2.Parent = headlessnkorblox
-TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.BorderSizePixel = 0
-TextButton_2.Position = UDim2.new(0.0111806532, 0, 0.244204715, 0)
-TextButton_2.Size = UDim2.new(0, 143, 0, 50)
-TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "Headless(clientsided)"
-TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
-TextButton_2.MouseButton1Click:Connect(function()
-	game.Players.LocalPlayer.Character.Head.Transparency = 1
-	game.Players.LocalPlayer.Character.Head.face.Transparency = 1
-end)
-
-UICorner_4.Parent = TextButton_2
 
 ScrollingFrame.Parent = Frame
 ScrollingFrame.Active = true
@@ -107,14 +81,29 @@ ScrollingFrame.Position = UDim2.new(0.0200169496, 0, 0.00779602723, 0)
 ScrollingFrame.Size = UDim2.new(0, 116, 0, 346)
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1, 0)
 
+TextButton_2.Parent = ScrollingFrame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0, 0, 0.140498072, 0)
+TextButton_2.Size = UDim2.new(0, 94, 0, 39)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "AVATAR"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+UICorner_4.Parent = TextButton_2
+
 TextButton_3.Parent = ScrollingFrame
 TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
 TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_3.BorderSizePixel = 0
-TextButton_3.Position = UDim2.new(0, 0, 0.140498072, 0)
+TextButton_3.Position = UDim2.new(0, 0, 0.00709630735, 0)
 TextButton_3.Size = UDim2.new(0, 94, 0, 39)
 TextButton_3.Font = Enum.Font.SourceSans
-TextButton_3.Text = "AVATAR"
+TextButton_3.Text = "Credits"
 TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_3.TextScaled = true
 TextButton_3.TextSize = 14.000
@@ -126,16 +115,58 @@ TextButton_4.Parent = ScrollingFrame
 TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
 TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_4.BorderSizePixel = 0
-TextButton_4.Position = UDim2.new(0, 0, 0.00709630735, 0)
+TextButton_4.Position = UDim2.new(0, 0, 0.273716211, 0)
 TextButton_4.Size = UDim2.new(0, 94, 0, 39)
 TextButton_4.Font = Enum.Font.SourceSans
-TextButton_4.Text = "Credits"
+TextButton_4.Text = "Player"
 TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_4.TextScaled = true
 TextButton_4.TextSize = 14.000
 TextButton_4.TextWrapped = true
 
 UICorner_6.Parent = TextButton_4
+
+Player.Name = "Player"
+Player.Parent = Frame
+Player.BackgroundColor3 = Color3.fromRGB(0, 179, 255)
+Player.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Player.BorderSizePixel = 0
+Player.Position = UDim2.new(0.287526429, 0, 0.187500045, 0)
+Player.Size = UDim2.new(0, 329, 0, 263)
+
+TextBox.Parent = Player
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0425531901, 0, 0.125475287, 0)
+TextBox.Size = UDim2.new(0, 142, 0, 57)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.SourceSans
+TextBox.PlaceholderText = "Enter WalkSpeed here.."
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+
+UICorner_7.Parent = TextBox
+
+TextBox_2.Parent = Player
+TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.BorderSizePixel = 0
+TextBox_2.Position = UDim2.new(0.504559278, 0, 0.125475287, 0)
+TextBox_2.Size = UDim2.new(0, 142, 0, 57)
+TextBox_2.ClearTextOnFocus = false
+TextBox_2.Font = Enum.Font.SourceSans
+TextBox_2.PlaceholderText = "Enter JumpPower here.."
+TextBox_2.Text = ""
+TextBox_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.TextScaled = true
+TextBox_2.TextSize = 14.000
+TextBox_2.TextWrapped = true
+
+UICorner_8.Parent = TextBox_2
 
 Credsframe.Name = "Credsframe"
 Credsframe.Parent = Frame
@@ -144,6 +175,7 @@ Credsframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Credsframe.BorderSizePixel = 0
 Credsframe.Position = UDim2.new(0.287526429, 0, 0.17613636, 0)
 Credsframe.Size = UDim2.new(0, 314, 0, 249)
+Credsframe.Visible = false
 
 TextLabel_2.Parent = Credsframe
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 179, 255)
@@ -158,9 +190,9 @@ TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
 TextLabel_2.TextWrapped = true
 
--- Scripts:
 
-local function ZITHEB_fake_script() -- TextLabel.Script 
+
+local function JMHJ_fake_script() -- TextLabel.Script 
 	local script = Instance.new('Script', TextLabel)
 
 	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
@@ -173,22 +205,66 @@ local function ZITHEB_fake_script() -- TextLabel.Script
 		counter = counter + 0.01
 	end
 end
-coroutine.wrap(ZITHEB_fake_script)()
-local function FYUJF_fake_script() -- TextButton_3.Script 
-	local script = Instance.new('Script', TextButton_3)
+coroutine.wrap(JMHJ_fake_script)()
+local function TXLWFU_fake_script() -- TextButton.Script 
+	local script = Instance.new('Script', TextButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local plr = game.Players.LocalPlayer.Character
+		plr.Head.Transparency = 1
+		plr.Head.face.Transparency = 1
+	end)
+end
+coroutine.wrap(TXLWFU_fake_script)()
+local function USPSM_fake_script() -- TextButton_2.Script 
+	local script = Instance.new('Script', TextButton_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Credsframe.Visible = false
 		script.Parent.Parent.Parent.headlessnkorblox.Visible = true
+		script.Parent.Parent.Parent.Player.Visible = false
 	end)
 end
-coroutine.wrap(FYUJF_fake_script)()
-local function HOXXA_fake_script() -- TextButton_4.Script 
-	local script = Instance.new('Script', TextButton_4)
+coroutine.wrap(USPSM_fake_script)()
+local function MBKF_fake_script() -- TextButton_3.Script 
+	local script = Instance.new('Script', TextButton_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Credsframe.Visible = true
 		script.Parent.Parent.Parent.headlessnkorblox.Visible = false
+		script.Parent.Parent.Parent.Player.Visible = false
 	end)
 end
-coroutine.wrap(HOXXA_fake_script)()
+coroutine.wrap(MBKF_fake_script)()
+local function ILTYSG_fake_script() -- TextButton_4.Script 
+	local script = Instance.new('Script', TextButton_4)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Credsframe.Visible = false
+		script.Parent.Parent.Parent.headlessnkorblox.Visible = false
+		script.Parent.Parent.Parent.Player.Visible = true
+	end)
+end
+coroutine.wrap(ILTYSG_fake_script)()
+local function JNPKGLJ_fake_script() -- TextBox.Script 
+	local script = Instance.new('Script', TextBox)
+
+	script.Parent.FocusLost:Connect(function(enter)
+		if enter then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(script.Parent.Text)
+		end
+	
+	end)
+end
+coroutine.wrap(JNPKGLJ_fake_script)()
+local function AIAXJ_fake_script() -- TextBox_2.Script 
+	local script = Instance.new('Script', TextBox_2)
+
+	script.Parent.FocusLost:Connect(function(enter)
+		if enter then
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(script.Parent.Text)
+		end
+	
+	end)
+end
+coroutine.wrap(AIAXJ_fake_script)()
