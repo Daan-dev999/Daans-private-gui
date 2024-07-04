@@ -37,7 +37,8 @@ Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.307587147, 0, 0.22674419, 0)
 Frame.Size = UDim2.new(0, 473, 0, 352)
-Frame.Visible = false
+Frame.Visible = true
+Frame.Dr 
 
 UICorner.Parent = Frame
 
